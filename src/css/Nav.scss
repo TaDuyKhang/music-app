@@ -1,0 +1,10 @@
+.nav {
+    position: fixed;
+    bottom: 0px;
+    padding: 20px;
+    // transform: translateY(-152%);
+    display: flex; 
+    justify-content: space-around;
+    width: 100%;
+    background-color: aqua;
+}
