@@ -1,14 +1,49 @@
 .list--tracks{
+    color: white;
+    margin: 0;
+    padding: 25px;
+    
+    h1{
+        margin: 0;
+    }
 
     
+
     .name{
+        font-size: 25px;
+        text-align: none !important;
+        font-weight: 500;
+        margin: 0;
+        white-space: nowrap;
+        width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    
+    .artists{
+        margin: 0;
+
         font-size: 20px;
     }
     
     a{
-        border: 1px solid black;
         text-decoration: none;
-        color: black;
+        color: white;
         display: block;
+        width: 100%;
     }
+
+    .isPlaying {
+        background-color: #8ebbff;
+    }
+
+
+    .item {
+        margin-bottom: 30px;
+    }
+}
+
+.drop--down {
+    padding-top: 150px;
 }

@@ -1,15 +1,12 @@
-import Nav from "../components/Nav.tsx";
-import Form from "../components/Home.Page.Components/Form.tsx";
 import Categories from "../components/Home.Page.Components/Categories.tsx";
-import PlayListByCategory from "../components/Home.Page.Components/PlayListByCategory.tsx";
-
+import Form from "../components/Home.Page.Components/Form.tsx";
 import { Route, Routes } from "react-router-dom";
-
 import { Spotify } from "../requests.js";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { setToken } from "../store/slice/slice.js";
 import { useDispatch } from "react-redux";
+import "../css/Home.scss";
 
 function Home() {
   const dispatch = useDispatch();
@@ -21,10 +18,10 @@ function Home() {
       .catch((err) => {});
   }, []);
   return (
-    <div>
-      <Form />
+    <div className="home">
+      <p className="title"> Nghe gì </p>
+      <p className="title">hôm nay? </p>
       <Categories />
-      <Nav />
     </div>
   );
 }

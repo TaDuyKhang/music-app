@@ -15,8 +15,25 @@ const slice = createSlice({
     setToken(state, action) {
       state.token = action.payload;
     },
+
+    setTracksList(state, action) {
+      state.trackList = action.payload;
+    },
+
+    setSearchTracks(state, action) {
+      state.SearchTracks = action.payload;
+    },
+
+    setType(state, action) {
+      state.type = action.payload;
+    },
+
+    setTrackId(state, action) {
+      state.trackId = action.payload;
+    },
   },
 });
 
-export const { setToken } = slice.actions;
+export const { setToken, setTracksList, setSearchTracks, setType, setTrackId } =
+  slice.actions;
 export default slice.reducer;

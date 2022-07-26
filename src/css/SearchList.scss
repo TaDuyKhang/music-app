@@ -1,0 +1,23 @@
+.search--list{
+    padding-left: 25px;
+    color: white;
+    .name{
+        font-size: 25px;
+    }
+
+    .artists{
+        font-size: 20px;
+    }
+    
+    a{
+        text-decoration: none;
+        color: white;
+        display: block;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    p{
+        margin: 0;
+    }
+}

@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GetTrackByCategoriesById } from "../../requests.js";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setTracksList, setType } from "../../store/slice/slice.js";
 import "../../css/TrackByPlaylistId.scss";
 
 export default function TrackByPlaylistId() {
@@ -9,7 +10,7 @@ export default function TrackByPlaylistId() {
   const token = useSelector((state) => state.slice.token);
   // const id = "37i9dQZF1DXafb0IuPwJyF";
   let { id } = useParams();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     GetTrackByCategoriesById.getTrackByCategoriesById(
       `https://api.spotify.com/v1/playlists/${id}`,
@@ -17,8 +18,9 @@ export default function TrackByPlaylistId() {
     ).then((res) => {
       console.log("tracklist", res.data);
       setTrackList(res.data);
+      dispatch(setTracksList(res.data.tracks.items));
     });
-  }, [id]);
+  }, []);
 
   return (
     <div className="list--tracks">
@@ -26,9 +28,14 @@ export default function TrackByPlaylistId() {
       <h3>{trackList?.description}</h3>
 
       {trackList?.tracks?.items?.map((item, index) => (
-        <Link to={"/playtrack/" + item.track.id} className="item" key={index}>
+        <Link
+          onClick={() => dispatch(setType("category"))}
+          to={"/playtrack/" + item.track.id}
+          className="item"
+          key={index}
+        >
           <p className="name">{item.track.name}</p>
-          <p>artists: {item.track.artists[0].name}</p>
+          <p className="artists">artists: {item.track.artists[0].name}</p>
         </Link>
       ))}
     </div>

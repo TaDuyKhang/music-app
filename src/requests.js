@@ -13,19 +13,6 @@ import axios from "axios";
 var client_id = "4502e73ed1b344df9e85c2ad64ce606b"; // Your client id
 var client_secret = "6b95a388162440898c3ccfca2f05d363"; // Your secret
 
-// your application requests authorization
-// var authOptions = {
-//   url: "https://accounts.spotify.com/api/token",
-//   headers: {
-//     Authorization:
-//       "Basic " + new Buffer(client_id + ":" + client_secret).toString("base64"),
-//   },
-//   form: {
-//     grant_type: "client_credentials",
-//   },
-//   json: true,
-// };
-
 class Spotify {
   static getAccessToken() {
     const body = new URLSearchParams({

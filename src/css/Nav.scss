@@ -6,5 +6,8 @@
     display: flex; 
     justify-content: space-around;
     width: 100%;
-    background-color: aqua;
+    background-color: #24293e;
+    z-index: 2;
+    max-width: 410px;
+    min-width: 340px;
 }
