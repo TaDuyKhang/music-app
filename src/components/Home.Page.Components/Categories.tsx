@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GetCategories } from "../../requests.js";
 import { useSelector } from "react-redux";
+import "../../css/Genres.scss";
 
 export default function Categories() {
   const token: String = useSelector((state) => state.slice.token);
