@@ -10,7 +10,6 @@ export default function Categories() {
 
   useEffect(() => {
     GetCategories.getCategories(
-      //   "https://api.spotify.com/v1/recommendations/available-genre-seeds",
       "https://api.spotify.com/v1/browse/categories?locate=sv_US",
       token
     ).then((res) => {

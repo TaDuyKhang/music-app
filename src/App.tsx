@@ -9,19 +9,18 @@ import { useEffect } from "react";
 import Nav from "./components/Nav.tsx";
 import Search from "./components/Search.tsx";
 import User from "./components/user.tsx";
-
-import Audio from "./components/Home.Page.Components/AudioPlayer.tsx";
+import { setToken } from "./store/slice/slice.js";
 import { useDispatch } from "react-redux";
 import { Spotify } from "./requests.js";
+import Audio from "./components/Home.Page.Components/AudioPlayer.tsx";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    Spotify.getAccessToken()
-      .then((data) => {
-        dispatch(setToken(data.data.access_token));
-      })
-      .catch((err) => {});
+    debugger;
+    Spotify.getAccessToken().then((data) => {
+      dispatch(setToken(data.data.access_token));
+    });
   }, []);
   return (
     <div className="App">
