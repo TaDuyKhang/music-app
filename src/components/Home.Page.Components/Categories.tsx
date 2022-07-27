@@ -1,18 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Route, Link, useParams, Routes } from "react-router-dom";
-import PlayListByCategory from "./PlayListByCategory.tsx";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { GetCategories } from "../../requests.js";
 import { useSelector } from "react-redux";
-// import "../../css/Category.scss";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "../../css/Genres.scss";
-
-// import required modules
-import { Pagination } from "swiper";
 
 export default function Categories() {
   const token: String = useSelector((state) => state.slice.token);
@@ -27,24 +16,11 @@ export default function Categories() {
       setCategories(res.data.categories);
       console.log(res.data.categories);
     });
-  }, []);
+  }, [token]);
 
   return (
     <>
       <div className="slideShow">
-        {/* <Swiper
-          slidesPerView={"auto"}
-          spaceBetween={20}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          {categories?.items?.map((item, index) => (
-            <SwiperSlide key={index}>    
-              <Link to={"category/" + item.id}>{item.name}</Link>
-            </SwiperSlide>
-          ))}
-        </Swiper> */}
-
         {categories?.items?.map((item, index) => (
           <Link className="item" key={index} to={"category/" + item.id}>
             <img className="icon" src={item?.icons[0]?.url} alt="" />
