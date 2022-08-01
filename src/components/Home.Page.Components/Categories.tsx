@@ -14,7 +14,6 @@ export default function Categories() {
       token
     ).then((res) => {
       setCategories(res.data.categories);
-      console.log(res.data.categories);
     });
   }, [token]);
 

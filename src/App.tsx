@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import Home from "./page/Home.page.tsx";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -17,16 +16,12 @@ import Audio from "./components/Home.Page.Components/AudioPlayer.tsx";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    debugger;
     Spotify.getAccessToken().then((data) => {
       dispatch(setToken(data.data.access_token));
     });
   }, []);
   return (
     <div className="App">
-      {/* <img src={Banner} alt="" /> */}
-      {/* <Switch> */}
-      {/* <AudioPlayer /> */}
       <div className="audio">
         <Audio />
       </div>
@@ -45,8 +40,6 @@ function App() {
           <Route path="/playtrack/:id" element={<PlayTrack />} />
         </Routes>
       </div>
-
-      {/* </Switch> */}
     </div>
   );
 }

@@ -9,10 +9,6 @@ export default function SearchList() {
   const data = useSelector((state) => state.slice.SearchTracks);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <div className="search--list">
       {data?.map((item, index) => (

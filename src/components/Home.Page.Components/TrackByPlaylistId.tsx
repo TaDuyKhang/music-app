@@ -16,7 +16,6 @@ export default function TrackByPlaylistId() {
       `https://api.spotify.com/v1/playlists/${id}`,
       token
     ).then((res) => {
-      console.log("tracklist", res.data);
       setTrackList(res.data);
       dispatch(setTracksList(res.data.tracks.items));
     });
@@ -27,15 +26,15 @@ export default function TrackByPlaylistId() {
       <h1>{trackList?.name}</h1>
       <h3>{trackList?.description}</h3>
 
-      {trackList?.tracks?.items?.map((item, index) => (
+      {trackList?.tracks.items.map((item, index) => (
         <Link
           onClick={() => dispatch(setType("category"))}
-          to={"/playtrack/" + item.track.id}
+          to={"/playtrack/" + item?.track?.id}
           className="item"
           key={index}
         >
-          <p className="name">{item.track.name}</p>
-          <p className="artists">artists: {item.track.artists[0].name}</p>
+          <p className="name">{item?.track?.name}</p>
+          <p className="artists">artists: {item?.track?.artists[0].name}</p>
         </Link>
       ))}
     </div>

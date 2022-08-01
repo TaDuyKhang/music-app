@@ -31,7 +31,6 @@ export default function PlayTrack() {
       token
     ).then((res) => {
       setTrack(res);
-      console.log(res);
     });
   }, [id]);
 
@@ -63,6 +62,9 @@ export default function PlayTrack() {
           src={track?.data.album.images[0].url}
           alt=""
         />
+        <p className="tracks--artists">
+          Tác giả: {track?.data.artists[0].name}
+        </p>
       </div>
     </div>
   );

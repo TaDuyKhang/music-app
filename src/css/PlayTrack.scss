@@ -11,6 +11,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        background-color: #24293e;
     }
 
     .track--name{
@@ -24,6 +25,7 @@
         text-overflow: ellipsis;
         margin-left: 15px;
     }
+
 
     .logo {
         width: 60%;
@@ -50,6 +52,11 @@
         img {
             width: 65%;
         }
+    }
+
+    .tracks--artists {
+        font-size: 25px;
+        color: white;
     }
 
     .shuffle-btn{
